@@ -1,9 +1,27 @@
-import React from 'react'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import NGORegister from "./pages/NGORegister";
+import CreateCampaign from "./pages/CreateCampaign";
+import CampaignList from "./pages/CampaignList";
+import Campaign from "./pages/Campaign";
+import Donate from "./pages/Donate";
 
-const App = () => {
+export default function App(){
   return (
-    <div className='bg-blue-500'>App</div>
-  )
+    <div className="min-h-screen">
+      <Navbar />
+      <div className="container mx-auto px-4 py-8">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ngoregister" element={<NGORegister />} />
+          <Route path="/campaigns" element={<CampaignList />} />
+          <Route path="/campaigns/create" element={<CreateCampaign />} />
+          <Route path="/campaigns/:id" element={<Campaign />} />
+          <Route path="/donate/:id" element={<Donate />} />
+        </Routes>
+      </div>
+    </div>
+  );
 }
-
-export default App
