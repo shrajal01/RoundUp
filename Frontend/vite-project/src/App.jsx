@@ -7,6 +7,7 @@ import CreateCampaign from "./pages/CreateCampaign";
 import CampaignList from "./pages/CampaignList";
 import Campaign from "./pages/Campaign";
 import Donate from "./pages/Donate";
+import Footer from "./components/footer";
 
 export default function App(){
   return (
@@ -22,6 +23,7 @@ export default function App(){
           <Route path="/donate/:id" element={<Donate />} />
         </Routes>
       </div>
+      <Footer/>
     </div>
   );
 }
